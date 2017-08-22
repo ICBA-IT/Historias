@@ -1,5 +1,4 @@
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
+# Add any directories, files, or patterns you don't want to be tracked by version control
 
 *~
 *.sw[mnpcod]

@@ -1,3 +1,20 @@
-page-home {
+page-home,
+.home {
 
+  .fab ion-icon {
+    font-size: 4rem;
+  }
+
+  .fab-in-list {
+    width: 52px;
+    height: 52px;
+    text-shadow: none !important;
+  }
+  .fab-md{
+    text-shadow: none !important;
+  }
+
+  ion-header ion-navbar img {
+    margin-top: 3px;
+  }
 }

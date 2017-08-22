@@ -1,5 +1,8 @@
 {
-  "name": "historias",
-  "app_id": "",
-  "type": "ionic-angular"
+  "name": "icba-hc-app",
+  "app_id": "11a03324",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

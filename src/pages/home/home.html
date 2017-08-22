@@ -1,14 +1,60 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar color="primary" hideBackButton="true">
+    <img src="assets/img/logo.png" (press)="showSettings()">
+    <ion-buttons end>
+      <button ion-button (click)="search()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-scroll scrollY="true"></ion-scroll>
+<ion-content class="common-bg">
+  <!-- Welcome -->
+  <div id="bienvenida">
+    <h4>Datos del paciente</h4>
+    <figure>
+        <img class="imgRedonda" src="assets/img/man.png" alt="drink"/>
+        <figcaption class="name">{{ name }}</figcaption>
+    </figure>
+  </div>
+ 
+  <ion-item>
+    <ion-label class="texto_chico" fixed>HC:</ion-label>
+    <ion-label class="texto_mediano">{{ medicalHistory }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label class="texto_chico" fixed>DNI:</ion-label>
+    <ion-label class="texto_mediano">{{ id }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label class="texto_chico" fixed>Cobertura:</ion-label>
+    <ion-label class="texto_mediano">{{ healthCoverageName }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label class="texto_chico" fixed>Nº Afiliado:</ion-label>
+    <ion-label class="texto_mediano">{{ healthCoverageMember }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label class="texto_chico" fixed>Edad:</ion-label>
+    <ion-label class="texto_mediano">{{ age }}</ion-label>
+  </ion-item>
+  
+  <!--ion-item>
+    <ion-label class="texto_chico" fixed>Sexo:</ion-label>
+    <ion-label><ion-icon name="man"></ion-icon></ion-label>
+  </ion-item-->
+
+  <ion-fab bottom right #fab>
+    <button ion-fab class="icon_button" ><ion-icon class="icon_fab" name="add-circle"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab class="icon_button" (click)="selectFile(fab)"><ion-icon class="icon_fab" name="folder-open"></ion-icon></button>
+    </ion-fab-list>
+    <ion-fab-list side="top">
+      <button ion-fab class="icon_button" (click)="takePictures(fab)"><ion-icon class="icon_fab" name="camera"></ion-icon></button>
+      <button ion-fab class="icon_button" *ngIf="allowDebug" (click)="editPictures(fab)"><ion-icon class="icon_fab" name="camera"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>
